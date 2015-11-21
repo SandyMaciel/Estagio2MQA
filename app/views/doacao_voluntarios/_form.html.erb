@@ -1,0 +1,65 @@
+<%= form_for(@doacao_voluntario) do |f| %>
+  <% if @doacao_voluntario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doacao_voluntario.errors.count, "error") %> prohibited this doacao_voluntario from being saved:</h2>
+
+      <ul>
+      <% @doacao_voluntario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instuicao_id %><br>
+    <%= f.number_field :instuicao_id %>
+  </div>
+  <div class="field">
+    <%= f.label :funcao %><br>
+    <%= f.text_field :funcao %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :domingo %><br>
+    <%= f.check_box :domingo %>
+  </div>
+  <div class="field">
+    <%= f.label :segunda %><br>
+    <%= f.check_box :segunda %>
+  </div>
+  <div class="field">
+    <%= f.label :terca %><br>
+    <%= f.check_box :terca %>
+  </div>
+  <div class="field">
+    <%= f.label :quarta %><br>
+    <%= f.check_box :quarta %>
+  </div>
+  <div class="field">
+    <%= f.label :quinta %><br>
+    <%= f.check_box :quinta %>
+  </div>
+  <div class="field">
+    <%= f.label :sexta %><br>
+    <%= f.check_box :sexta %>
+  </div>
+  <div class="field">
+    <%= f.label :sabado %><br>
+    <%= f.check_box :sabado %>
+  </div>
+  <div class="field">
+    <%= f.label :horario_inicial %><br>
+    <%= f.time_select :horario_inicial %>
+  </div>
+  <div class="field">
+    <%= f.label :horario_final %><br>
+    <%= f.time_select :horario_final %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

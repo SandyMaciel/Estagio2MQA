@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instuicao:</strong>
+  <%= @doacao_captacao.instuicao_id %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @doacao_captacao.titulo %>
+</p>
+
+<p>
+  <strong>Objetivo:</strong>
+  <%= @doacao_captacao.objetivo %>
+</p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @doacao_captacao.meta %>
+</p>
+
+<%= link_to 'Edit', edit_doacao_captacao_path(@doacao_captacao) %> |
+<%= link_to 'Back', doacao_captacaos_path %>

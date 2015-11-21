@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Doacao Ideia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instuicao</th>
+      <th>Descricao</th>
+      <th>Finalidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doacao_ideia.each do |doacao_ideium| %>
+      <tr>
+        <td><%= doacao_ideium.instuicao_id %></td>
+        <td><%= doacao_ideium.descricao %></td>
+        <td><%= doacao_ideium.finalidade %></td>
+        <td><%= link_to 'Show', doacao_ideium %></td>
+        <td><%= link_to 'Edit', edit_doacao_ideium_path(doacao_ideium) %></td>
+        <td><%= link_to 'Destroy', doacao_ideium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doacao ideium', new_doacao_ideium_path %>

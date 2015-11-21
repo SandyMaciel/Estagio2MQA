@@ -1,0 +1,29 @@
+<%= form_for(@doacao_ideium) do |f| %>
+  <% if @doacao_ideium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doacao_ideium.errors.count, "error") %> prohibited this doacao_ideium from being saved:</h2>
+
+      <ul>
+      <% @doacao_ideium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instuicao_id %><br>
+    <%= f.number_field :instuicao_id %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :finalidade %><br>
+    <%= f.text_field :finalidade %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

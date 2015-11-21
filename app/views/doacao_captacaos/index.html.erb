@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Doacao Captacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instuicao</th>
+      <th>Titulo</th>
+      <th>Objetivo</th>
+      <th>Meta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doacao_captacaos.each do |doacao_captacao| %>
+      <tr>
+        <td><%= doacao_captacao.instuicao_id %></td>
+        <td><%= doacao_captacao.titulo %></td>
+        <td><%= doacao_captacao.objetivo %></td>
+        <td><%= doacao_captacao.meta %></td>
+        <td><%= link_to 'Show', doacao_captacao %></td>
+        <td><%= link_to 'Edit', edit_doacao_captacao_path(doacao_captacao) %></td>
+        <td><%= link_to 'Destroy', doacao_captacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doacao captacao', new_doacao_captacao_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@doacao_financeira) do |f| %>
+  <% if @doacao_financeira.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doacao_financeira.errors.count, "error") %> prohibited this doacao_financeira from being saved:</h2>
+
+      <ul>
+      <% @doacao_financeira.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instuicao_id %><br>
+    <%= f.number_field :instuicao_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :banco %><br>
+    <%= f.text_field :banco %>
+  </div>
+  <div class="field">
+    <%= f.label :titular %><br>
+    <%= f.text_field :titular %>
+  </div>
+  <div class="field">
+    <%= f.label :agencia %><br>
+    <%= f.text_field :agencia %>
+  </div>
+  <div class="field">
+    <%= f.label :conta %><br>
+    <%= f.text_field :conta %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br>
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

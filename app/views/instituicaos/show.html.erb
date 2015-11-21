@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @instituicao.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @instituicao.email %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @instituicao.senha %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @instituicao.cnpj %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @instituicao.endereco %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @instituicao.telefone %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @instituicao.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_instituicao_path(@instituicao) %> |
+<%= link_to 'Back', instituicaos_path %>

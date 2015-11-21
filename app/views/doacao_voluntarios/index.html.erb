@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Doacao Voluntarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instuicao</th>
+      <th>Funcao</th>
+      <th>Descricao</th>
+      <th>Domingo</th>
+      <th>Segunda</th>
+      <th>Terca</th>
+      <th>Quarta</th>
+      <th>Quinta</th>
+      <th>Sexta</th>
+      <th>Sabado</th>
+      <th>Horario inicial</th>
+      <th>Horario final</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doacao_voluntarios.each do |doacao_voluntario| %>
+      <tr>
+        <td><%= doacao_voluntario.instuicao_id %></td>
+        <td><%= doacao_voluntario.funcao %></td>
+        <td><%= doacao_voluntario.descricao %></td>
+        <td><%= doacao_voluntario.domingo %></td>
+        <td><%= doacao_voluntario.segunda %></td>
+        <td><%= doacao_voluntario.terca %></td>
+        <td><%= doacao_voluntario.quarta %></td>
+        <td><%= doacao_voluntario.quinta %></td>
+        <td><%= doacao_voluntario.sexta %></td>
+        <td><%= doacao_voluntario.sabado %></td>
+        <td><%= doacao_voluntario.horario_inicial %></td>
+        <td><%= doacao_voluntario.horario_final %></td>
+        <td><%= link_to 'Show', doacao_voluntario %></td>
+        <td><%= link_to 'Edit', edit_doacao_voluntario_path(doacao_voluntario) %></td>
+        <td><%= link_to 'Destroy', doacao_voluntario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doacao voluntario', new_doacao_voluntario_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instuicao:</strong>
+  <%= @doacao_material.instuicao_id %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @doacao_material.quantidade %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @doacao_material.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_doacao_material_path(@doacao_material) %> |
+<%= link_to 'Back', doacao_materials_path %>

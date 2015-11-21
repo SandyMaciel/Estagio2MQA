@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Doacao Financeiras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instuicao</th>
+      <th>Nome</th>
+      <th>Banco</th>
+      <th>Titular</th>
+      <th>Agencia</th>
+      <th>Conta</th>
+      <th>Cnpj</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doacao_financeiras.each do |doacao_financeira| %>
+      <tr>
+        <td><%= doacao_financeira.instuicao_id %></td>
+        <td><%= doacao_financeira.nome %></td>
+        <td><%= doacao_financeira.banco %></td>
+        <td><%= doacao_financeira.titular %></td>
+        <td><%= doacao_financeira.agencia %></td>
+        <td><%= doacao_financeira.conta %></td>
+        <td><%= doacao_financeira.cnpj %></td>
+        <td><%= link_to 'Show', doacao_financeira %></td>
+        <td><%= link_to 'Edit', edit_doacao_financeira_path(doacao_financeira) %></td>
+        <td><%= link_to 'Destroy', doacao_financeira, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doacao financeira', new_doacao_financeira_path %>

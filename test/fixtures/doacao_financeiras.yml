@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instuicao_id: 1
+  nome: MyString
+  banco: MyString
+  titular: MyString
+  agencia: MyString
+  conta: MyString
+  cnpj: MyString
+
+two:
+  instuicao_id: 1
+  nome: MyString
+  banco: MyString
+  titular: MyString
+  agencia: MyString
+  conta: MyString
+  cnpj: MyString

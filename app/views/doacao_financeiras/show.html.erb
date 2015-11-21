@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instuicao:</strong>
+  <%= @doacao_financeira.instuicao_id %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @doacao_financeira.nome %>
+</p>
+
+<p>
+  <strong>Banco:</strong>
+  <%= @doacao_financeira.banco %>
+</p>
+
+<p>
+  <strong>Titular:</strong>
+  <%= @doacao_financeira.titular %>
+</p>
+
+<p>
+  <strong>Agencia:</strong>
+  <%= @doacao_financeira.agencia %>
+</p>
+
+<p>
+  <strong>Conta:</strong>
+  <%= @doacao_financeira.conta %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @doacao_financeira.cnpj %>
+</p>
+
+<%= link_to 'Edit', edit_doacao_financeira_path(@doacao_financeira) %> |
+<%= link_to 'Back', doacao_financeiras_path %>

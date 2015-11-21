@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instuicao_id: 1
+  funcao: MyString
+  descricao: MyString
+  domingo: false
+  segunda: false
+  terca: false
+  quarta: false
+  quinta: false
+  sexta: false
+  sabado: false
+  horario_inicial: 2015-11-20 22:49:46
+  horario_final: 2015-11-20 22:49:46
+
+two:
+  instuicao_id: 1
+  funcao: MyString
+  descricao: MyString
+  domingo: false
+  segunda: false
+  terca: false
+  quarta: false
+  quinta: false
+  sexta: false
+  sabado: false
+  horario_inicial: 2015-11-20 22:49:46
+  horario_final: 2015-11-20 22:49:46
