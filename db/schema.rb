@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121014946) do
+ActiveRecord::Schema.define(version: 20151122154338) do
 
   create_table "doacao_captacaos", force: :cascade do |t|
     t.integer  "instuicao_id", limit: 4
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 20151121014946) do
     t.text     "descricao",  limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",         limit: 255
+    t.string   "password_hash", limit: 255
+    t.string   "password_salt", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

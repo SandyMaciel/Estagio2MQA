@@ -17,6 +17,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+# peguei desse tutorial
+# security http://nycda.com/blog/basic-user-authentication-model-in-rails-4/
+gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 
 
 # Use jquery as the JavaScript library
