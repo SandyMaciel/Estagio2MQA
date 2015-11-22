@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Cadastrar Instiuição | MQA </title>
+    <title>Cadastrar Instiuição | MQA</title>
 
 	<!-- core CSS -->
     <%= stylesheet_link_tag "bootstrap.min.cs" %>
@@ -49,7 +49,14 @@
           </div><!--/.container-->
       </div><!--/.top-bar-->
 
-  <%= yield %>
+  <div id="main-container" class="container">
+    <div class="row">
+      <div class="col-xs-2">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
 
   <footer id="footer" class="midnight-blue">
       <div class="container">
