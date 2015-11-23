@@ -1,12 +1,8 @@
-*, html{
-	font-family: Helvetica, Arial,sans-serif;
-	margin: 0px;
-	padding: 0px;
-	font-size: 12px;
-}
+
 
 body{
 	margin: 10px;
+  	width:1550px;
 }
 
 
@@ -21,11 +17,13 @@ table thead th{
   color:#fff;
   text-align:center;
   font-size:14px;
+  	width:2000px;
 }
 
 table thead th.header{
   cursor:pointer;
   text-align:center;
+  	width:2000px;
 
 }
 
@@ -38,14 +36,17 @@ table tbody td{
 
 table tbody tr.odd td{
   background-color:#ffffcc;
+    width: 2000px;
 }
 
 table tbody tr.hover td{
   background-color:#a9d0f5;
+    width: 2000px;
 }
 
 table tbody tr.selected td{
   background-color:#a9f5a9!important;
+    width: 2000px;
 }
 
 .pagedisplay{
@@ -62,10 +63,11 @@ table tbody tr.selected td{
 	margin:0 0 0 20px;
 	color:#666;
 	float:right;
+  	width:2000px;
 }
 
 #pager form{
 	text-align:left;
 	padding:10px;
-	width:580px;
+	width:2000px;
 }

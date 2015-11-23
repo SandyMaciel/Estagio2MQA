@@ -6,7 +6,7 @@
    <script src="jquery.tablesorter.pager.js"></script>
    <link rel="stylesheet" href="custom.css" media="screen" />
  </head>
-<h1><font color=#00000 >Cadastrar Captação</font></h1>
+<h1><font  color=#00000 >Captações</font></h1>
 
 <table cellspacing="1" >
   <thead>
@@ -31,7 +31,7 @@
         <td><%= doacao_captacao.meta %></td>
         <td><%= link_to (image_tag (asset_path ('show.png'))), doacao_captacao %></td>
         <td><img width="16" height="16"><%= link_to (image_tag  (asset_path ('edit.png'))), edit_doacao_captacao_path(doacao_captacao) %></img></td>
-        <td><img width="16" height="16"><%= link_to (image_tag (asset_path ('delete.png'))), doacao_captacao, method: :delete, data: { confirm: 'Are you sure?' } %></img></td>
+        <td><img width="16" height="16"><%= link_to (image_tag (asset_path ('delete.png'))), doacao_captacao, method: :delete, data: { confirm: 'Apagar captação?' } %></img></td>
       </tr>
     <% end %>
   </tbody>

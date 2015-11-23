@@ -20,5 +20,5 @@
   <%= @doacao_captacao.meta %>
 </p>
 
-<%= link_to 'Edit', edit_doacao_captacao_path(@doacao_captacao) %> |
-<%= link_to 'Back', doacao_captacaos_path %>
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_captacao_path(@doacao_captacao) %> 
+<%= link_to (image_tag (asset_path ('voltar.png'))), doacao_captacaos_path %>
