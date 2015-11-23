@@ -14,6 +14,13 @@ Rails.application.config.assets.precompile += %w( animate.min.css )
 Rails.application.config.assets.precompile += %w( prettyPhoto.css )
 Rails.application.config.assets.precompile += %w( main.css )
 Rails.application.config.assets.precompile += %w( responsive.css )
+Rails.application.config.assets.precompile += %w( jquery.tablesorter.min.js )
+Rails.application.config.assets.precompile += %w( jquery.tablesorter.pager.js )
+Rails.application.config.assets.precompile += %w( custom.css )
+
+
+
+
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
