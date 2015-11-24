@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "left wow fadeInDown"  >
+<legend><h1><font color="000000"> Instituição Castrada </font></legend></h1></div>
 <p>
   <strong>Nome:</strong>
   <%= @instituicao.nome %>
@@ -35,5 +37,5 @@
   <%= @instituicao.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_instituicao_path(@instituicao) %> |
-<%= link_to 'Back', instituicaos_path %>
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_instituicao_path(@instituicao) %>
+<%= link_to (image_tag (asset_path ('voltar.png'))), instituicaos_path %>
