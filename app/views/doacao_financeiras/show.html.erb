@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+ <h3><font color=#00000>Dados bancários da instuição </font></h3>
 <p>
   <strong>Instuicao:</strong>
   <%= @doacao_financeira.instuicao_id %>
@@ -35,5 +37,5 @@
   <%= @doacao_financeira.cnpj %>
 </p>
 
-<%= link_to 'Edit', edit_doacao_financeira_path(@doacao_financeira) %> |
-<%= link_to 'Back', doacao_financeiras_path %>
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_financeira_path(@doacao_financeira) %>
+<%= link_to (image_tag (asset_path ('voltar.png'))), doacao_financeiras_path %>

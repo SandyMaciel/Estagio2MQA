@@ -29,6 +29,7 @@
         <td><%= doacao_captacao.titulo %></td>
         <td><%= doacao_captacao.objetivo %></td>
         <td><%= doacao_captacao.meta %></td>
+        <td></td>
         <td><%= link_to (image_tag (asset_path ('show.png'))), doacao_captacao %></td>
         <td><img width="16" height="16"><%= link_to (image_tag  (asset_path ('edit.png'))), edit_doacao_captacao_path(doacao_captacao) %></img></td>
         <td><img width="16" height="16"><%= link_to (image_tag (asset_path ('delete.png'))), doacao_captacao, method: :delete, data: { confirm: 'Apagar captação?' } %></img></td>
