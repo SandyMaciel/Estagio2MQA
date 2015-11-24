@@ -1,13 +1,22 @@
 <p id="notice"><%= notice %></p>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="jquery.tablesorter.min.js"></script>
+<script src="jquery.tablesorter.pager.js"></script>
+<link rel="stylesheet" href="custom.css" media="screen" />
 
-<h1>Listing Doacao Ideia</h1>
-
-<table>
+<h1><font color=#00000>Ideias</font></h1>
+<p>
+  <%= link_to (image_tag (asset_path ('nideia.png'))), new_doacao_ideium_path %>
+  <p>
+    <p>
+<table cellspacing="1">
   <thead>
     <tr>
       <th>Instuicao</th>
       <th>Descricao</th>
       <th>Finalidade</th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +27,70 @@
         <td><%= doacao_ideium.instuicao_id %></td>
         <td><%= doacao_ideium.descricao %></td>
         <td><%= doacao_ideium.finalidade %></td>
-        <td><%= link_to 'Show', doacao_ideium %></td>
-        <td><%= link_to 'Edit', edit_doacao_ideium_path(doacao_ideium) %></td>
-        <td><%= link_to 'Destroy', doacao_ideium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to (image_tag (asset_path ('show.png'))), doacao_ideium %></td>
+        <td><%= link_to  (image_tag (asset_path ('edit.png'))), edit_doacao_ideium_path(doacao_ideium) %></td>
+        <td><%= link_to  (image_tag (asset_path ('delete.png'))), doacao_ideium, method: :delete, data: { confirm: 'Apagar Ideia?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<script>
+$(function(){
 
-<%= link_to 'New Doacao ideium', new_doacao_ideium_path %>
+  $('table > tbody > tr:odd').addClass('odd');
+
+  $('table > tbody > tr').hover(function(){
+    $(this).toggleClass('hover');
+  });
+
+  $('#marcar-todos').click(function(){
+    $('table > tbody > tr > td > :checkbox')
+      .attr('checked', $(this).is(':checked'))
+      .trigger('change');
+  });
+
+  $('table > tbody > tr > td > :checkbox').bind('click change', function(){
+    var tr = $(this).parent().parent();
+    if($(this).is(':checked')) $(tr).addClass('selected');
+    else $(tr).removeClass('selected');
+  });
+
+  $('form').submit(function(e){ e.preventDefault(); });
+
+  $('#pesquisar').keydown(function(){
+    var encontrou = false;
+    var termo = $(this).val().toLowerCase();
+    $('table > tbody > tr').each(function(){
+      $(this).find('td').each(function(){
+        if($(this).text().toLowerCase().indexOf(termo) > -1) encontrou = true;
+      });
+      if(!encontrou) $(this).hide();
+      else $(this).show();
+      encontrou = false;
+    });
+  });
+
+  $("table")
+    .tablesorter({
+      dateFormat: 'uk',
+      headers: {
+        0: {
+          sorter: false
+        },
+        5: {
+          sorter: false
+        }
+      }
+    })
+    .tablesorterPager({container: $("#pager")})
+    .bind('sortEnd', function(){
+      $('table > tbody > tr').removeClass('odd');
+      $('table > tbody > tr:odd').addClass('odd');
+    });
+
+});
+</script>
+
+<br>
