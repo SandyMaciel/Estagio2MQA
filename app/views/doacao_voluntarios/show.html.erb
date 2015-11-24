@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "left wow fadeInDown"  >
+<legend><h1><font color="000000"> Voluntário Castrado </font></legend></h1></div>
 <p>
   <strong>Instuicao:</strong>
   <%= @doacao_voluntario.instuicao_id %>
@@ -60,5 +62,5 @@
   <%= @doacao_voluntario.horario_final %>
 </p>
 
-<%= link_to 'Edit', edit_doacao_voluntario_path(@doacao_voluntario) %> |
-<%= link_to 'Back', doacao_voluntarios_path %>
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_voluntario_path(@doacao_voluntario) %> 
+<%= link_to (image_tag (asset_path ('voltar.png'))), doacao_voluntarios_path %>
