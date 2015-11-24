@@ -1,13 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Doacao Materials</h1>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="jquery.tablesorter.min.js"></script>
+<script src="jquery.tablesorter.pager.js"></script>
+<link rel="stylesheet" href="custom.css" media="screen" />
 
-<table>
+
+<div class = "left wow fadeInDown"  >
+<legend><h1><font color="000000"> Materiais </font></legend></h1></div>
+
+<%= link_to  (image_tag (asset_path ('nmaterial.png'))), new_doacao_material_path %>
+<p>
+
+<table cellspacing="1">
   <thead>
     <tr>
       <th>Instuicao</th>
       <th>Quantidade</th>
       <th>Descricao</th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +30,9 @@
         <td><%= doacao_material.instuicao_id %></td>
         <td><%= doacao_material.quantidade %></td>
         <td><%= doacao_material.descricao %></td>
-        <td><%= link_to 'Show', doacao_material %></td>
-        <td><%= link_to 'Edit', edit_doacao_material_path(doacao_material) %></td>
-        <td><%= link_to 'Destroy', doacao_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to (image_tag (asset_path ('show.png'))), doacao_material %></td>
+        <td><%= link_to (image_tag (asset_path ('edit.png'))), edit_doacao_material_path(doacao_material) %></td>
+        <td><%= link_to (image_tag (asset_path ('delete.png'))), doacao_material, method: :delete, data: { confirm: 'Deletar Material?'  } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +40,61 @@
 
 <br>
 
-<%= link_to 'New Doacao material', new_doacao_material_path %>
+<script>
+$(function(){
+
+  $('table > tbody > tr:odd').addClass('odd');
+
+  $('table > tbody > tr').hover(function(){
+    $(this).toggleClass('hover');
+  });
+
+  $('#marcar-todos').click(function(){
+    $('table > tbody > tr > td > :checkbox')
+      .attr('checked', $(this).is(':checked'))
+      .trigger('change');
+  });
+
+  $('table > tbody > tr > td > :checkbox').bind('click change', function(){
+    var tr = $(this).parent().parent();
+    if($(this).is(':checked')) $(tr).addClass('selected');
+    else $(tr).removeClass('selected');
+  });
+
+  $('form').submit(function(e){ e.preventDefault(); });
+
+  $('#pesquisar').keydown(function(){
+    var encontrou = false;
+    var termo = $(this).val().toLowerCase();
+    $('table > tbody > tr').each(function(){
+      $(this).find('td').each(function(){
+        if($(this).text().toLowerCase().indexOf(termo) > -1) encontrou = true;
+      });
+      if(!encontrou) $(this).hide();
+      else $(this).show();
+      encontrou = false;
+    });
+  });
+
+  $("table")
+    .tablesorter({
+      dateFormat: 'uk',
+      headers: {
+        0: {
+          sorter: false
+        },
+        5: {
+          sorter: false
+        }
+      }
+    })
+    .tablesorterPager({container: $("#pager")})
+    .bind('sortEnd', function(){
+      $('table > tbody > tr').removeClass('odd');
+      $('table > tbody > tr:odd').addClass('odd');
+    });
+
+});
+</script>
+
+<br>

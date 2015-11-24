@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<div class = "left wow fadeInDown"  >
+<legend><h1><font color="000000"> Material Castrado </font></legend></h1></div>
 <p>
   <strong>Instuicao:</strong>
   <%= @doacao_material.instuicao_id %>
@@ -15,5 +16,5 @@
   <%= @doacao_material.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_doacao_material_path(@doacao_material) %> |
-<%= link_to 'Back', doacao_materials_path %>
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_material_path(@doacao_material) %> 
+<%= link_to (image_tag (asset_path ('voltar.png'))), doacao_materials_path %>
