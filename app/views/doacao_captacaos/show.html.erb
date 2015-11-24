@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "left wow fadeInDown"  >
+<legend><h1><font color="000000">  Captação </font></h1></legend></div>
 <p>
   <strong>Instuicao:</strong>
   <%= @doacao_captacao.instuicao_id %>
@@ -20,5 +22,5 @@
   <%= @doacao_captacao.meta %>
 </p>
 
-<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_captacao_path(@doacao_captacao) %> 
+<%= link_to (image_tag (asset_path ('editar.png'))), edit_doacao_captacao_path(@doacao_captacao) %>
 <%= link_to (image_tag (asset_path ('voltar.png'))), doacao_captacaos_path %>
