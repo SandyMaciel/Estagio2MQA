@@ -28,7 +28,7 @@ class DoacaoFinanceirasController < ApplicationController
 
     respond_to do |format|
       if @doacao_financeira.save
-        format.html { redirect_to @doacao_financeira, notice: 'Doacao financeira was successfully created.' }
+        format.html { redirect_to @doacao_financeira, notice: 'Financeira cadastrada com sucesso.' }
         format.json { render :show, status: :created, location: @doacao_financeira }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DoacaoFinanceirasController < ApplicationController
   def update
     respond_to do |format|
       if @doacao_financeira.update(doacao_financeira_params)
-        format.html { redirect_to @doacao_financeira, notice: 'Doacao financeira was successfully updated.' }
+        format.html { redirect_to @doacao_financeira, notice: 'Financeira atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @doacao_financeira }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DoacaoFinanceirasController < ApplicationController
   def destroy
     @doacao_financeira.destroy
     respond_to do |format|
-      format.html { redirect_to doacao_financeiras_url, notice: 'Doacao financeira was successfully destroyed.' }
+      format.html { redirect_to doacao_financeiras_url, notice: 'Financeira deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

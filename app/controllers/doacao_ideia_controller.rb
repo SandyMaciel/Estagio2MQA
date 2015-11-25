@@ -28,7 +28,7 @@ class DoacaoIdeiaController < ApplicationController
 
     respond_to do |format|
       if @doacao_ideium.save
-        format.html { redirect_to @doacao_ideium, notice: 'Doacao ideium was successfully created.' }
+        format.html { redirect_to @doacao_ideium, notice: 'Ideia cadastrada com sucesso.' }
         format.json { render :show, status: :created, location: @doacao_ideium }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DoacaoIdeiaController < ApplicationController
   def update
     respond_to do |format|
       if @doacao_ideium.update(doacao_ideium_params)
-        format.html { redirect_to @doacao_ideium, notice: 'Doacao ideium was successfully updated.' }
+        format.html { redirect_to @doacao_ideium, notice: 'Ideia atualizada com sucesso..' }
         format.json { render :show, status: :ok, location: @doacao_ideium }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DoacaoIdeiaController < ApplicationController
   def destroy
     @doacao_ideium.destroy
     respond_to do |format|
-      format.html { redirect_to doacao_ideia_url, notice: 'Doacao ideium was successfully destroyed.' }
+      format.html { redirect_to doacao_ideia_url, notice: 'Ideia deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

@@ -28,7 +28,7 @@ class DoacaoCaptacaosController < ApplicationController
 
     respond_to do |format|
       if @doacao_captacao.save
-        format.html { redirect_to @doacao_captacao, notice: 'Doacao captacao was successfully created.' }
+        format.html { redirect_to @doacao_captacao, notice: 'Captação criada com sucesso.' }
         format.json { render :show, status: :created, location: @doacao_captacao }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DoacaoCaptacaosController < ApplicationController
   def update
     respond_to do |format|
       if @doacao_captacao.update(doacao_captacao_params)
-        format.html { redirect_to @doacao_captacao, notice: 'Doacao captacao was successfully updated.' }
+        format.html { redirect_to @doacao_captacao, notice: 'Captação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @doacao_captacao }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DoacaoCaptacaosController < ApplicationController
   def destroy
     @doacao_captacao.destroy
     respond_to do |format|
-      format.html { redirect_to doacao_captacaos_url, notice: 'Doacao captacao was successfully destroyed.' }
+      format.html { redirect_to doacao_captacaos_url, notice: 'Captação deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

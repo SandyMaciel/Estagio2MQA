@@ -28,7 +28,7 @@ class DoacaoVoluntariosController < ApplicationController
 
     respond_to do |format|
       if @doacao_voluntario.save
-        format.html { redirect_to @doacao_voluntario, notice: 'Doacao voluntario was successfully created.' }
+        format.html { redirect_to @doacao_voluntario, notice: 'Voluntario cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @doacao_voluntario }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DoacaoVoluntariosController < ApplicationController
   def update
     respond_to do |format|
       if @doacao_voluntario.update(doacao_voluntario_params)
-        format.html { redirect_to @doacao_voluntario, notice: 'Doacao voluntario was successfully updated.' }
+        format.html { redirect_to @doacao_voluntario, notice: 'Voluntario editado com sucesso.' }
         format.json { render :show, status: :ok, location: @doacao_voluntario }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DoacaoVoluntariosController < ApplicationController
   def destroy
     @doacao_voluntario.destroy
     respond_to do |format|
-      format.html { redirect_to doacao_voluntarios_url, notice: 'Doacao voluntario was successfully destroyed.' }
+      format.html { redirect_to doacao_voluntarios_url, notice: 'Voluntario deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
